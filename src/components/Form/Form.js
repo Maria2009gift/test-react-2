@@ -8,6 +8,12 @@ class Form extends Component {
         license: true
 
       }
+
+      handleSubmit = (event) => {
+        event.preventDefault()
+        this.props.onSubmit(this.state.name)
+        event.currentTarget.reset()
+      }
     
       handleImputChange = (event) => {
         this.setState({[event.currentTarget.name]: event.currentTarget.value})
